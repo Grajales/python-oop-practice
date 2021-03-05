@@ -23,8 +23,17 @@
 #    - drive: print 'vroom vroom' to the console
 #
 # Once you create your class definition create two instances.
-#
-
+# class Car:
+#     def __init__(self):
+#         self.make = ""
+#         self.model =""
+#         self.color=""
+#     def drive(self,make):
+#         self.make = make
+#         return print(f'Vroom Vroom {self.make}')
+# mycar = Car()
+# mycar.drive('Toyota')
+# mycar.__dict__
 #
 # Prompt 2: We Do
 #
@@ -36,7 +45,17 @@
 #
 # Make an instance of your Toyota class.
 #
-
+# class Car:
+#     def __init__(self,model):
+#         self.model = model
+     
+#     def drive(self):
+#         print(f'Vroom Vroom')
+# class Toyota(Car):
+#         def __init__(self,model):
+#             super().__init__(model)
+# mycar2 = Toyota('truck')
+# mycar2.drive()
 #
 # Prompt 3: You Do
 #
@@ -45,7 +64,26 @@
 #
 # After you've defined your class, create 3 instances.
 #
-
+class Animal:
+    def __init__(self,color):
+        self.color = ""
+     
+    def coloring(self):
+        self.color = color
+        print(f'My color {self.color}')
+        
+        
+class Jirafe(Animal):
+        def __init__(self,color):
+            super().__init__(color)
+            print(f'my color is not {self.color}')
+            
+                
+                
+            
+myJirafe = Animal('green') 
+myJirafe2 = Jirafe('green')     
+    
 # Prompt 4: You Do
 #
 # Once we've completed the above, work through the following changes to your
