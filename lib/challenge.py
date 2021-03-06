@@ -107,7 +107,36 @@
 
 #********************************************
 # ANSWER PROMPT #4
+class Car:
+    def __init__(self,model):
+        self.model = model
+     
+    def drive(self):
+        print(f'Vroom Vroom')
+        
+class Toyota(Car):
+        def __init__(self,model,color):
+            super().__init__(model)
+            self.color = color
+     
+           
+        def gasLevel(self,level):
+            self.level=level
+            if self.level=="low":
+                print(f'fill in your {self.color} {self.model}, its gas tank is {self.level}')
+            elif self.level == "medium":
+                print(f'your {self.color} {self.model} gas level is {self.level}, it has gas for 150 miles')
+            else: 
+                print(f'your {self.color} {self.model} gas level is {self.level}, it has gas for 300 miles')
+    
 
+            
+mycar2 = Toyota('truck',"green")
+print(mycar2.__dict__)
+# mycar2.drive()
+mycar2.gasLevel('low')
+mycar2.gasLevel('medium')
+mycar2.gasLevel('high')
 #
 # Prompt 5: You Do
 #
