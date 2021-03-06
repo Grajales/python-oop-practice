@@ -23,18 +23,21 @@
 #    - drive: print 'vroom vroom' to the console
 #
 # Once you create your class definition create two instances.
+#********************************************
+# ANSWER PROMPT #1
 # class Car:
-#     def __init__(self):
-#         self.make = ""
-#         self.model =""
-#         self.color=""
-#     def drive(self,make):
+#     def __init__(self,make,model,color):
 #         self.make = make
-#         return print(f'Vroom Vroom {self.make}')
-# mycar = Car()
-# mycar.drive('Toyota')
-# mycar.__dict__
-#
+#         self.model =model
+#         self.color=color
+#     def drive(self):
+#         # self.make = make
+#         return print('Vroom Vroom')
+# mycar = Car('Subaru','Impreza', 'blue')
+# print(mycar.__dict__)
+# mycar.drive()
+#********************************************
+
 # Prompt 2: We Do
 #
 # We're going to modify our Car class from the previous prompt and extend it to
@@ -44,7 +47,8 @@
 #     be 'Toyota'. Add a drive method to your Toyota class.
 #
 # Make an instance of your Toyota class.
-#
+#********************************************
+# ANSWER PROMPT #2
 # class Car:
 #     def __init__(self,model):
 #         self.model = model
@@ -54,8 +58,11 @@
 # class Toyota(Car):
 #         def __init__(self,model):
 #             super().__init__(model)
+            
 # mycar2 = Toyota('truck')
+# print(mycar2.__dict__)
 # mycar2.drive()
+#********************************************
 #
 # Prompt 3: You Do
 #
@@ -63,26 +70,30 @@
 # class 3 attributes and two methods.
 #
 # After you've defined your class, create 3 instances.
-#
-class Animal:
-    def __init__(self,color):
-        self.color = ""
-     
-    def coloring(self):
-        self.color = color
-        print(f'My color {self.color}')
+
+#********************************************
+# ANSWER PROMPT #3
+# class Animal:
+#     def __init__(self,name,color):
+#         self.name= name
+#         self.color = color
         
-        
-class Jirafe(Animal):
-        def __init__(self,color):
-            super().__init__(color)
-            print(f'my color is not {self.color}')
-            
-                
-                
-            
-myJirafe = Animal('green') 
-myJirafe2 = Jirafe('green')     
+
+#     def height (self,height):
+#         self.height=height
+#         return print(f'The {self.name} is {self.color} with a height of {self.height} meters')
+    
+#     def weight (self,weight):
+#         self.weight=weight
+#         return print(f'The {self.name} is {self.color} and its weight is {self.weight} kilograms')
+
+# jirafe =Animal('Jirafe','yellow')
+# print(jirafe.__dict__)
+# jirafe.height(10)
+# jirafe.weight(100)
+    
+#********************************************            
+  
     
 # Prompt 4: You Do
 #
@@ -93,7 +104,9 @@ myJirafe2 = Jirafe('green')
 #   - move the drive method to your Car class
 #   - add a property to your Toyota class
 #   - add a property to your Car class and "fill it in" for your Toyota class
-#
+
+#********************************************
+# ANSWER PROMPT #4
 
 #
 # Prompt 5: You Do
@@ -110,7 +123,8 @@ myJirafe2 = Jirafe('green')
 # Create an instance of your animal class (the one that extends the Animal
 # class).
 #
-
+#********************************************
+# ANSWER PROMPT #5
 #
 # Prompt 6: You Do
 #
