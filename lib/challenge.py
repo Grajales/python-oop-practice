@@ -107,36 +107,37 @@
 
 #********************************************
 # ANSWER PROMPT #4
-class Car:
-    def __init__(self,model):
-        self.model = model
+# class Car:
+#     def __init__(self,model):
+#         self.model = model
      
-    def drive(self):
-        print(f'Vroom Vroom')
+#     def drive(self):
+#         print(f'Vroom Vroom')
         
-class Toyota(Car):
-        def __init__(self,model,color):
-            super().__init__(model)
-            self.color = color
+# class Toyota(Car):
+#         def __init__(self,model,color):
+#             super().__init__(model)
+#             self.color = color
      
            
-        def gasLevel(self,level):
-            self.level=level
-            if self.level=="low":
-                print(f'fill in your {self.color} {self.model}, its gas tank is {self.level}')
-            elif self.level == "medium":
-                print(f'your {self.color} {self.model} gas level is {self.level}, it has gas for 150 miles')
-            else: 
-                print(f'your {self.color} {self.model} gas level is {self.level}, it has gas for 300 miles')
+#         def gasLevel(self,level):
+#             self.level=level
+#             if self.level=="low":
+#                 print(f'fill in your {self.color} {self.model}, its gas tank is {self.level}')
+#             elif self.level == "medium":
+#                 print(f'your {self.color} {self.model} gas level is {self.level}, it has gas for 150 miles')
+#             else: 
+#                 print(f'your {self.color} {self.model} gas level is {self.level}, it has gas for 300 miles')
     
 
             
-mycar2 = Toyota('truck',"green")
-print(mycar2.__dict__)
-# mycar2.drive()
-mycar2.gasLevel('low')
-mycar2.gasLevel('medium')
-mycar2.gasLevel('high')
+# mycar2 = Toyota('truck',"green")
+# print(mycar2.__dict__)
+# # mycar2.drive()
+# mycar2.gasLevel('low')
+# mycar2.gasLevel('medium')
+# mycar2.gasLevel('high')
+#********************************************
 #
 # Prompt 5: You Do
 #
@@ -154,6 +155,47 @@ mycar2.gasLevel('high')
 #
 #********************************************
 # ANSWER PROMPT #5
+
+class Animal:
+    def __init__(self,name):
+        self.name= name
+    def eat (self):
+        return print('Yum yum')
+    def sleep (self):
+        return print('zzzzz')
+    
+    
+class Invertebrates(Animal):
+    def __init__(self,name,prey):
+        super().__init__(name)
+        self.prey=prey
+    def eat(self): 
+        print(f'The {self.name} ate a {self.prey}')
+        return super().eat
+ 
+class Mamals(Animal):
+    def __init__(self,name,prey):
+        super().__init__(name)
+        self.prey=prey
+    def eat(self): 
+        print(f'The {self.name} ate a {self.prey}')
+        return super().eat
+        
+
+dog =Animal("chase")
+dog.eat()
+print(dog.__dict__)
+ant =Invertebrates("ant",'leaf')
+print(ant.__dict__)
+ant.eat()
+Lion =Mamals("Lion",'turkey')
+print(Lion.__dict__)
+Lion.eat()
+
+
+
+    
+#********************************************     
 #
 # Prompt 6: You Do
 #
@@ -178,3 +220,9 @@ mycar2.gasLevel('high')
 #
 # Instantiate an instance of your Deck and start drawing random cards!
 #
+# class Deck:
+#     def __init__(self,length,cards):
+#         self.length=52
+#         self.cards=[]
+#     def draw (self):
+        
