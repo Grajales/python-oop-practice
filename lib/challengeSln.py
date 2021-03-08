@@ -1,14 +1,10 @@
-#
-# Instructions:
-# Work through the following prompts. Prompts marked with "We Do", we will work
-# on together, as a class; prompts marked with "You Do", you will be given time
-# to work through on your own.
-#
-# Tip: comment out your solution to each prompt before moving on to the next
-# one! This will keep your console clear.
-#
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar  8 13:55:17 2021
 
-#
+@author: LG29878
+"""
 # Prompt 1: We Do
 #
 # Define a class for a Car. Your Car class should have the following
@@ -49,19 +45,20 @@
 # Make an instance of your Toyota class.
 #********************************************
 # ANSWER PROMPT #2
-# class Car:
-#     def __init__(self,model):
-#         self.model = model
-     
-#     def drive(self):
-#         print(f'Vroom Vroom')
+
 # class Toyota(Car):
-#         def __init__(self,model):
-#             super().__init__(model)
+#         def __init__(self,model,color):
+#             super().__init__('Toyota',model,color)
             
-# mycar2 = Toyota('truck')
+# mycar2 = Toyota('truck','white')
 # print(mycar2.__dict__)
 # mycar2.drive()
+
+
+#Another way, but not elegant
+# class Toyota(Car):
+#         def __init__(self,model,color,make='Toyota'):
+#             super().__init__(make,model,color)
 #********************************************
 #
 # Prompt 3: You Do
@@ -73,25 +70,22 @@
 
 #********************************************
 # ANSWER PROMPT #3
-# class Animal:
-#     def __init__(self,name,color):
-#         self.name= name
-#         self.color = color
+class Dog:
+    def __init__(self,name,breed, owner):
+        self.name= name
+        self.breed=breed
+        self.owner= owner
         
-
-#     def height (self,height):
-#         self.height=height
-#         return print(f'The {self.name} is {self.color} with a height of {self.height} meters')
-    
-#     def weight (self,weight):
-#         self.weight=weight
-#         return print(f'The {self.name} is {self.color} and its weight is {self.weight} kilograms')
-
-# jirafe =Animal('Jirafe','yellow')
-# print(jirafe.__dict__)
-# jirafe.height(10)
-# jirafe.weight(100)
-    
+    def play(self):
+        print('throw the ball')
+    def sleep(self):
+        print('ZZZzzzZZZ')
+pepper = Dog('Peppermint Mocha',"Collie",'Thiago')
+ginger=Dog('Ginger','boxer','Todd')
+print(ginger.__dict__)
+print(pepper.__dict__)
+ginger.play()
+pepper.sleep()
 #********************************************            
   
     
@@ -107,36 +101,27 @@
 
 #********************************************
 # ANSWER PROMPT #4
-# class Car:
-#     def __init__(self,model):
-#         self.model = model
-     
-#     def drive(self):
-#         print(f'Vroom Vroom')
-        
-# class Toyota(Car):
-#         def __init__(self,model,color):
-#             super().__init__(model)
-#             self.color = color
-     
-           
-#         def gasLevel(self,level):
-#             self.level=level
-#             if self.level=="low":
-#                 print(f'fill in your {self.color} {self.model}, its gas tank is {self.level}')
-#             elif self.level == "medium":
-#                 print(f'your {self.color} {self.model} gas level is {self.level}, it has gas for 150 miles')
-#             else: 
-#                 print(f'your {self.color} {self.model} gas level is {self.level}, it has gas for 300 miles')
+class Car:
+    def __init__(self, make, model, mileage):
+        self.make = make
+        self.model =model
+        self.mileage =mileage
+
+    def drive(self):
+        return print('Vroom Vroom')
     
 
+class Toyota(Car):
+     def __init__(self,model,color):
+         super().__init__('Toyota',model)
+         self.color = color
+         self.owned = True
+         self.canFly = True
             
-# mycar2 = Toyota('truck',"green")
-# print(mycar2.__dict__)
-# # mycar2.drive()
-# mycar2.gasLevel('low')
-# mycar2.gasLevel('medium')
-# mycar2.gasLevel('high')
+mycar2 = Toyota('truck','white')
+print(mycar2.__dict__)
+mycar2.drive()
+
 #********************************************
 #
 # Prompt 5: You Do
@@ -260,50 +245,3 @@
 #                 self.mycardset.append((c)+" "+"of"+" "+n) 
 
 # cardsD=Deck()
-# print(cardsD.__dict__)
-
-# class Card:
-#     def __init__ (self):
-#         self.suit=['hearts', 'spades','clubs','diamonds']
-#         self.rank =['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
-#         self.score=[1,2,3,4,5,6,7,8,9,10,11,12,13]
-# class Deck(Card):
-#     def __init__(self):
-#         super().__init__(self)
-#         self.length=52
-#         self.cardDeck=[]
-#     def draw(self):
-#         for i in range(0,3):
-#             for j in range (0,12):
-#                 self.cardDeck[i,j]=[self.suit[i],self.rank[j],self.score[j]]
-#         return print(f'cardeck {cardDeck}')
-
-# cardsD=Deck()
-# print(cardsD.__dict__)
-# cardsD.draw
-# print(cardsD.draw.__dict__)
-
-class Cards:
-    def __init__ (self):
-        self.suit=['hearts', 'spades','clubs','diamonds']
-        self.rank =['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
-        self.score=[1,2,3,4,5,6,7,8,9,10,11,12,13]
-        
-class Deck(Cards):
-    def __init__(self):
-        super().__init__()
-#         self.length=52
-        self.cardDeck=[]
-        
-        for i in range(0,3):
-            for j in range (0,12):
-                self.cardDeck.append([self.suit[i],self.rank[j],self.score[j]])
-
-cardsD = Cards()
-cardsD1 = Deck()
-print(cardsD1.__dict__)
-
-    
-    
-    
-        
