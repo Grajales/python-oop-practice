@@ -156,44 +156,41 @@
 #********************************************
 # ANSWER PROMPT #5
 
-class Animal:
-    def __init__(self,name):
-        self.name= name
-    def eat (self):
-        return print('Yum yum')
-    def sleep (self):
-        return print('zzzzz')
+# class Animal:
+#     def __init__(self,name):
+#         self.name= name
+#     def eat (self):
+#         return print('Yum yum')
+#     def sleep (self):
+#         return print('zzzzz')
     
     
-class Invertebrates(Animal):
-    def __init__(self,name,prey):
-        super().__init__(name)
-        self.prey=prey
-    def eat(self): 
-        print(f'The {self.name} ate a {self.prey}')
-        return super().eat
+# class Invertebrates(Animal):
+#     def __init__(self,name,prey):
+#         super().__init__(name)
+#         self.prey=prey
+#     def eat(self): 
+#         print(f'The {self.name} ate a {self.prey}')
+#         return super().eat
  
-class Mamals(Animal):
-    def __init__(self,name,prey):
-        super().__init__(name)
-        self.prey=prey
-    def eat(self): 
-        print(f'The {self.name} ate a {self.prey}')
-        return super().eat
+# class Mamals(Animal):
+#     def __init__(self,name,prey):
+#         super().__init__(name)
+#         self.prey=prey
+#     def eat(self): 
+#         print(f'The {self.name} ate a {self.prey}')
+#         return super().eat
         
 
-dog =Animal("chase")
-dog.eat()
-print(dog.__dict__)
-ant =Invertebrates("ant",'leaf')
-print(ant.__dict__)
-ant.eat()
-Lion =Mamals("Lion",'turkey')
-print(Lion.__dict__)
-Lion.eat()
-
-
-
+# dog =Animal("chase")
+# dog.eat()
+# print(dog.__dict__)
+# ant =Invertebrates("ant",'leaf')
+# print(ant.__dict__)
+# ant.eat()
+# Lion =Mamals("Lion",'turkey')
+# print(Lion.__dict__)
+# Lion.eat()
     
 #********************************************     
 #
@@ -220,9 +217,46 @@ Lion.eat()
 #
 # Instantiate an instance of your Deck and start drawing random cards!
 #
-# class Deck:
-#     def __init__(self,length,cards):
-#         self.length=52
-#         self.cards=[]
-#     def draw (self):
+
+class Card:
+    def __init__ (self):
+        self.suit=['hearts', 'spades','clubs','diamonds']
+        self.rank =['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
+        self.score=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+class Deck(Card):
+    def __init__(self):
+        Card.__init__(self)
+        self.length=52
+        self.cardDeck=[]
+
+    def draw(self):
+        for i in range(0,3):
+            for j in range (0,12):
+                cardDeck[i,j]=[self.suits[i],self.rank[j],self.score[j]]
+                print(f'cardeck {cardDeck[i,j]}')
+cardsD=Deck()
+print(cardsD.__dict__)
+print(cardsD.draw)
+
+# class Cards: 
+#     global suites, values 
+#     suites = ['Hearts', 'Diamonds', 'Clubs', 'Spades'] 
+#     values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'] 
+  
+#     def __init__(self): 
+#         pass
+  
+  
+# # Define a class to categorize each card 
+# class Deck(Cards): 
+#     def __init__(self): 
+#         Cards.__init__(self) 
+#         self.mycardset = [] 
+#         for n in suites: 
+#             for c in values: 
+#                 self.mycardset.append((c)+" "+"of"+" "+n) 
+
+cardsD=Deck()
+print(cardsD.__dict__)
+    
         
