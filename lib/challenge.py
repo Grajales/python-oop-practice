@@ -282,26 +282,76 @@
 # print(cardsD.__dict__)
 # cardsD.draw
 # print(cardsD.draw.__dict__)
-
-class Cards:
-    def __init__ (self):
-        self.suit=['hearts', 'spades','clubs','diamonds']
-        self.rank =['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
-        self.score=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+# import random
+# class Cards:
+#     def __init__ (self):
+#         self.suit=['hearts', 'spades','clubs','diamonds']
+#         self.rank =['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
+#         self.score=[1,2,3,4,5,6,7,8,9,10,11,12,13]
         
-class Deck(Cards):
-    def __init__(self):
-        super().__init__()
+# class Deck(Cards):
+#     def __init__(self):
+#         super().__init__()
+#         self.length = 52
+#         self.cardDeck = []
+#         self.newCard = []
+        
+#         for i in range(0,3):
+#             for j in range (1,13):
+#                 self.cardDeck.append([self.suit[i],self.rank[j],self.score[j]])
+#         print(self.cardDeck)
+#         print(type(self.cardDeck))
+        
+#     def draw(self):
+#         # random.shuffle(self.cardDeck)
+#         # print(self.cardDeck)
+#         # self.new_card = self.cardDeck.pop
+#         # print(self.new_card)
+#         return random.choice(self.cardDeck)
+    
+#     def pop(self):
+#         self.newCard = self.cardDeck.pop(0)
+#         print(self.newCard)
+    
+#     def remove(self):
+#         self.newCard = self.cardDeck.pop(0)
+#         print(self.newCard)
+        
+
+        
+
+# # cardsD = Cards()
+# cardsD1 = Deck()
+# # print(cardsD1.__dict__)
+# print(cardsD1.pop.__dict__)
+
+
+
+# class Card:
+#     def __init__ (self):
+#         self.suit = suit
+#         self.rank = rank
+#         self.score= score
+        
+# class Deck():
+#     def __init__(self):
+#         super().__init__()
 #         self.length=52
-        self.cardDeck=[]
+#         self.cardDeck=[]
+#         self.suit=['hearts', 'spades','clubs','diamonds']
+#         self.rank =['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
+#         self.score=[1,2,3,4,5,6,7,8,9,10,11,12,13]
         
-        for i in range(0,3):
-            for j in range (0,12):
-                self.cardDeck.append([self.suit[i],self.rank[j],self.score[j]])
+#         for i in self.suit:
+#             for j in self.score:
+#                 #create a card
+#                 self.cardDeck.append([self.suit[i],self.rank[j],self.score[j]])
 
-cardsD = Cards()
-cardsD1 = Deck()
-print(cardsD1.__dict__)
+# cardsD = Cards()
+# cardsD1 = Deck()
+# print(cardsD1.__dict__)
+
+
 
     
     

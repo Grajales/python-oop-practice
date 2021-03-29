@@ -101,26 +101,26 @@ pepper.sleep()
 
 #********************************************
 # ANSWER PROMPT #4
-class Car:
-    def __init__(self, make, model, mileage):
-        self.make = make
-        self.model =model
-        self.mileage =mileage
+# class Car:
+#     def __init__(self, make, model, mileage):
+#         self.make = make
+#         self.model =model
+#         self.mileage =mileage
 
-    def drive(self):
-        return print('Vroom Vroom')
+#     def drive(self):
+#         return print('Vroom Vroom')
     
 
-class Toyota(Car):
-     def __init__(self,model,color):
-         super().__init__('Toyota',model)
-         self.color = color
-         self.owned = True
-         self.canFly = True
+# class Toyota(Car):
+#      def __init__(self,model,color):
+#          super().__init__('Toyota',model)
+#          self.color = color
+#          self.owned = True
+#          self.canFly = True
             
-mycar2 = Toyota('truck','white')
-print(mycar2.__dict__)
-mycar2.drive()
+# mycar2 = Toyota('truck','white')
+# print(mycar2.__dict__)
+# mycar2.drive()
 
 #********************************************
 #
@@ -245,3 +245,36 @@ mycar2.drive()
 #                 self.mycardset.append((c)+" "+"of"+" "+n) 
 
 # cardsD=Deck()
+
+#Thiago's Solution
+class Card:
+    def __init__ (self, suit, rank, score):
+        self.suit = suit
+        self.rank = rank
+        self.score = score
+class Deck:
+    def __init__(self):
+        self.length = 52
+        self.cards = []
+        self.suits= ['hearts', 'spades','clubs','diamonds']
+        self.ranks = ['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
+        self.scores = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+        for suit in self.suits:
+            for index, rank in enumerate(self.ranks):
+                # create card
+                new_card = Card(suit, rank, self.scores[index])
+                self.cards.append(new_card)
+    def draw(self):
+        # how to het the random cards
+        new_card = random.choice(self.cards)
+        # print('this card is out ===> ', new_card.__dict__)
+        self.remove(new_card)
+        return new_card
+    def pop(self, index):
+        self.cards.pop(index)
+    def remove(self, card):
+        self.cards.remove(card)
+deck = Deck()
+print(''deck.draw().__dict__)
+# list comprehension 
+[print(card.__dict__) for  card in deck.cards]
